@@ -4,7 +4,7 @@ mod hash_util;
 
 fn main() {
     let mut input_line = String::new();
-    println!("Enter the line from /etc/shadow: ");
+    println!("Enter the line from /etc/shadow or SAM DB: ");
     io::stdin()
         .read_line(&mut input_line)
         .expect("Failed to read line");
