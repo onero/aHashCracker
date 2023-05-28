@@ -1,8 +1,6 @@
 use std::io::{self};
-mod linux;
+mod cracking;
 mod hash_util;
-use linux::crack_linux_password;
-use hash_util::identify_hash;
 
 fn main() {
     let mut input_line = String::new();
@@ -26,13 +24,13 @@ fn main() {
     // Check if the hash belongs to Linux or Windows
     if trimmed_linux_hash.starts_with("$") {
         println!("Identified hash as Linux password");
-        let (hash_type, hash_without_prefix) = identify_hash(trimmed_linux_hash);
-        let cracked_password = crack_linux_password(hash_type, &hash_without_prefix, wordlist_file);
+        let (hash_type, hash_without_prefix) = hash_util::identify_hash(trimmed_linux_hash);
+        let cracked_password = cracking::crack_password(hash_type, &hash_without_prefix, wordlist_file);
         println!("Result: {}:{}", username, cracked_password);
     } else if trimmed_windows_hash.len() == 32 {  // NTLM hashes are 32 characters long
         println!("Identified hash as Windows NTLM hash");
         let hash_type = hash_util::NTLM.to_owned();
-        let cracked_password = crack_linux_password(hash_type, trimmed_windows_hash, wordlist_file);
+        let cracked_password = cracking::crack_password(hash_type, trimmed_windows_hash, wordlist_file);
         println!("Result: {}:{}", username, cracked_password);
     } else {
         println!("Unable to identify the hash type");

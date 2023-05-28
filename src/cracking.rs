@@ -6,7 +6,7 @@ use hex::encode as hex_encode;
 use crate::hash_util;
 use ntlm_hash::*;
 
-pub fn crack_linux_password(hash_type: String, hash: &str, wordlist_file: &str) -> String {
+pub fn crack_password(hash_type: String, hash: &str, wordlist_file: &str) -> String {
     let file = File::open(wordlist_file).expect("Failed to open wordlist file");
     let reader = io::BufReader::new(file);
 
