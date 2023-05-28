@@ -4,6 +4,7 @@ use ring::digest::{digest, SHA256, SHA512};
 use md5::compute as md5_compute;
 use hex::encode as hex_encode;
 use crate::hash_util;
+use ntlm_hash::*;
 
 pub fn crack_linux_password(hash_type: String, hash: &str, wordlist_file: &str) -> String {
     let file = File::open(wordlist_file).expect("Failed to open wordlist file");
@@ -26,13 +27,15 @@ pub fn crack_linux_password(hash_type: String, hash: &str, wordlist_file: &str) 
         } else if hash_type == hash_util::SHA512 {
             let sha512_hash = digest(&SHA512, password.as_bytes());
             hex_encode(sha512_hash.as_ref())
+        } else if hash_type == hash_util::NTLM {
+            ntlm_hash(&password)
         } else {
             println!("Unknown hash type");
             break;
         };
 
-        if hash == password_hash {
-            println!("Cracked Linux password: Attempt: {}", attempt);
+        if hash.to_lowercase() == password_hash.to_lowercase() {
+            println!("Cracked password: Attempt: {}", attempt);
             return password;
         } else {
             println!("[{}] No match...", attempt);

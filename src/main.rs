@@ -18,14 +18,21 @@ fn main() {
     }
 
     let username = parts[0].trim();
-    let trimmed_hash = parts[1].trim();
+    let trimmed_linux_hash = parts[1].trim();
+    let trimmed_windows_hash = parts[3].trim(); // NTLM hash!
+
+    let wordlist_file = "../wordlist.txt";
 
     // Check if the hash belongs to Linux or Windows
-    if trimmed_hash.starts_with("$") {
+    if trimmed_linux_hash.starts_with("$") {
         println!("Identified hash as Linux password");
-        let (hash_type, hash_without_prefix) = identify_hash(trimmed_hash);
-        let wordlist_file = "../wordlist.txt";
+        let (hash_type, hash_without_prefix) = identify_hash(trimmed_linux_hash);
         let cracked_password = crack_linux_password(hash_type, &hash_without_prefix, wordlist_file);
+        println!("Result: {}:{}", username, cracked_password);
+    } else if trimmed_windows_hash.len() == 32 {  // NTLM hashes are 32 characters long
+        println!("Identified hash as Windows NTLM hash");
+        let hash_type = hash_util::NTLM.to_owned();
+        let cracked_password = crack_linux_password(hash_type, trimmed_windows_hash, wordlist_file);
         println!("Result: {}:{}", username, cracked_password);
     } else {
         println!("Unable to identify the hash type");

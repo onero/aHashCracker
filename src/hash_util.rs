@@ -4,6 +4,7 @@ pub const SHA256: &str = "SHA256";
 pub const SHA256_IDENTIFIER: &str = "$5$";
 pub const SHA512: &str = "SHA512";
 pub const SHA512_IDENTIFIER: &str = "$6$";
+pub const NTLM: &str = "NTLM";
 
 pub fn identify_hash(hash: &str) -> (String, String) {
     // Check if the hash matches MD5 hash
