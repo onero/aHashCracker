@@ -1,0 +1,12 @@
+[package]
+name = "a_hash_cracker"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+md5 = "0.7.0"
+ring = "0.16.20"
+hex = "0.4.3"
+ntlm-hash = "0.1.0"
