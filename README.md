@@ -12,6 +12,19 @@ It supports cracking password hashes from Linux (/etc/shadow) and Windows (NTLM)
 
 ## Usage
 
+### Running with docker-compose
+
+You can also run the program in a Docker container with compose.
+For this you just need to have [Docker](https://docs.docker.com/get-docker/) installed.
+
+1. Run the program with the
+
+```bash
+docker-compose run cracker
+```
+
+### Development
+
 You'll need to [install Rust](https://www.rust-lang.org/tools/install) in order to run the project.
 
 1. Clone the repository:
@@ -21,27 +34,18 @@ git clone https://github.com/onero/ahashcracker.git
 cd ahashcracker
 ```
 
-2. Build the project:
+2. Download a wordlist (rockyou was used) and place it in wordlist/rockyou.txt
+
+3. Build the project:
 
 ```bash
 cargo build --release
 ```
 
-3. Run the program:
+4. Run the program:
 
 ```bash
 cargo run
-```
-
-## docker-compose
-
-You can also run the program in a Docker container with compose.
-For this you just need to have [Docker](https://docs.docker.com/get-docker/) installed.
-
-1. Run the program with the
-
-```bash
-docker-compose run cracker
 ```
 
 ## Contributing
