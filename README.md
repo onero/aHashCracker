@@ -14,7 +14,9 @@ It supports cracking password hashes from Linux (/etc/shadow) and Windows (NTLM)
 
 ### Running with docker-compose
 
-You can also run the program in a Docker container with compose.
+NB. The container ships with rockyou.txt included!
+
+You can run the program in a Docker container with compose.
 For this you just need to have [Docker](https://docs.docker.com/get-docker/) installed.
 
 1. Run the program with the
@@ -22,6 +24,14 @@ For this you just need to have [Docker](https://docs.docker.com/get-docker/) ins
 ```bash
 docker-compose run cracker
 ```
+
+### Running from the binary
+
+1. Grab the latest [release](https://github.com/onero/aHashCracker/releases)
+2. Download a wordlist (rockyou was used, but feel free to use any and rename to "rockyou.txt") and place it next to the program in wordlist/rockyou.txt
+3. Execute binary and pwn passwords!
+
+### Example of program running
 
 The program will prompt for the hash line
 
