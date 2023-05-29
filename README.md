@@ -19,7 +19,8 @@ NB. The container ships with rockyou.txt included!
 You can run the program in a Docker container with compose.
 For this you just need to have [Docker](https://docs.docker.com/get-docker/) installed.
 
-1. Run the program with the
+1. Download the [docker-compose.yml](https://github.com/onero/aHashCracker/blob/master/docker-compose.yml)
+2. Run the program with docker-compose
 
 ```bash
 docker-compose run cracker
