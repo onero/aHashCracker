@@ -43,3 +43,11 @@ For this you just need to have [Docker](https://docs.docker.com/get-docker/) ins
 ```bash
 docker-compose run cracker
 ```
+
+## Contributing
+
+Contributions to this project are welcome. Please create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
