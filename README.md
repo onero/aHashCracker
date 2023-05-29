@@ -18,7 +18,7 @@ You'll need to [install Rust](https://www.rust-lang.org/tools/install) in order 
 
 ```bash
 git clone https://github.com/onero/ahashcracker.git
-cd hash_cracker
+cd ahashcracker
 ```
 
 2. Build the project:
