@@ -30,6 +30,14 @@ docker-compose run cracker
 
 1. Grab the latest [release](https://github.com/onero/aHashCracker/releases)
 2. Download a wordlist (rockyou was used, but feel free to use any and rename to "rockyou.txt") and place it next to the program in wordlist/rockyou.txt
+
+```
+├── FolderWithFiles/
+  └── aHashCracker
+    └── wordlist/
+      └── rockyou.txt
+```
+
 3. Execute binary and pwn passwords!
 
 ### Example of program running
