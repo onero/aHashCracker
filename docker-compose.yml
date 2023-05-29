@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  cracker:
+    image: adamino/a-hash-cracker:latest
+    container_name: aHashCracker
+    restart: always
+    stdin_open: true
+    tty: true
