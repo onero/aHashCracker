@@ -14,13 +14,13 @@ RUN cargo build --release
 FROM debian:buster-slim
 
 # Create a new directory in the builder container and set it as the working directory
-WORKDIR /aHashCracker
+WORKDIR /usr/local/bin
 
 # Copy the binary from the builder stage
-COPY --from=builder /aHashCracker/target/release/a_hash_cracker /usr/local/bin
+COPY --from=builder /aHashCracker/target/release/a_hash_cracker .
 
 # Copy the wordlist from the builder stage
-COPY --from=builder /aHashCracker/wordlist .
+COPY --from=builder /aHashCracker/wordlist wordlist/
 
 # Run your application when the container starts
 CMD ["a_hash_cracker"]

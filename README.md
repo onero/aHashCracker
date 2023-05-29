@@ -30,11 +30,11 @@ You'll need to [install Rust](https://www.rust-lang.org/tools/install) in order 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/onero/ahashcracker.git
-cd ahashcracker
+git clone https://github.com/onero/aHashCracker.git
+cd aHashCracker
 ```
 
-2. Download a wordlist (rockyou was used) and place it in wordlist/rockyou.txt
+2. Download a wordlist (rockyou was used, but feel free to use any and rename to "rockyou.txt") and place it next to the program in wordlist/rockyou.txt
 
 3. Build the project:
 
