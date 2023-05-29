@@ -23,6 +23,20 @@ For this you just need to have [Docker](https://docs.docker.com/get-docker/) ins
 docker-compose run cracker
 ```
 
+The program will prompt for the hash line
+
+```bash
+Enter the line from /etc/shadow or SAM DB:
+adamino:502:c46b9e588fa0d112de6f59fd6d58eae3:C196CAE1F0F364BAF748EE0E7F753A15:::
+
+...
+[9997] No match...
+[9998] No match...
+[9999] No match...
+Cracked password: Attempt: 10000
+Result: adamino:kupal
+```
+
 ### Development
 
 You'll need to [install Rust](https://www.rust-lang.org/tools/install) in order to run the project.
