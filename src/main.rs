@@ -19,7 +19,7 @@ fn main() {
     let trimmed_linux_hash = parts[1].trim();
     let trimmed_windows_hash = parts[3].trim(); // NTLM hash!
 
-    let wordlist_file = "/aHashCracker/rockyou.txt";
+    let wordlist_file = "wordlist/rockyou.txt";
 
     // Check if the hash belongs to Linux or Windows
     if trimmed_linux_hash.starts_with("$") {
