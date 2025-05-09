@@ -7,6 +7,6 @@ edition = "2021"
 
 [dependencies]
 md5 = "0.7.0"
-ring = "0.16.20"
+ring = "0.17.13"
 hex = "0.4.3"
 ntlm-hash = "0.1.0"
